@@ -20,6 +20,7 @@ High level objectives are:
 	. Support EDD in your UI with RabbitMQ and/or Websockets
 
 User stories for your TODO app:
+
     . As a VISITOR, I should be able to login to see my TODO list
     . As a USER, I should be able to add a Task
     . As a USER, I should be able to see when a Task was added
@@ -31,6 +32,7 @@ User stories for your TODO app:
 
 
 Stretch User stories:
+
     . As a USER, I should be able to create and see many TODO lists
     . As a USER, I should be able to name my TODO list so I can manage them more easily
     . As a USER, I should be able to share my TODO list with another GUEST who can view only that list
