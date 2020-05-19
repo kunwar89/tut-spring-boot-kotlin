@@ -11,3 +11,7 @@ interface UserRepository : CrudRepository<User, Long> {
 	fun findByLogin(login: String): User?
 }
 
+interface TaskRepository : CrudRepository<Task, Long> {
+	fun findByExternalIdIn(externalId: List<String>): Iterable<Task>
+}
+
