@@ -1,9 +1,8 @@
-FROM openjdk:8 AS BUILD_IMAGE
-ENV APP_HOME=/root/dev/myapp/
-WORKDIR $APP_HOME
-COPY build.gradle.kts gradlew gradlew.bat $APP_HOME
-COPY /gradle $APP_HOME/gradle
-# download dependencies
-COPY . .
-RUN ./gradlew build --stacktrace --debug --info
-CMD ["java","-jar","/root/dev/myapp/target/blog-0.0.1-SNAPSHOT.jar"]
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+RUN mkdir /work
+COPY . /work
+WORKDIR /work
+RUN /work/gradlew build
+RUN mv /work/build/libs/*.jar /work/app.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/work/app.jar"]
