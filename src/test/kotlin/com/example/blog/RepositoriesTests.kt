@@ -43,7 +43,7 @@ class RepositoriesTests @Autowired constructor(
 		entityManager.persist(taskTwo)
 		entityManager.flush()
 
-		val tasks = taskRepository.findByTaskIds(listOf("1", "2"))
+		val tasks = taskRepository.findByExternalIds(listOf("1", "2"))
 		assertThat(tasks[0]).isEqualTo(taskOne)
 		assertThat(tasks[1]).isEqualTo(taskTwo)
 
