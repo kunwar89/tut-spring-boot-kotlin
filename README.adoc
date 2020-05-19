@@ -4,6 +4,40 @@
 :project_id: tut-spring-boot-kotlin
 :tabsize: 2
 
+
+UPDATE:
+High level objectives are:
+
+	. Build an API driven TODO application using Spring Boot and a datastore.
+	. Use TDD to develop all functionality (i.e. red-green-commit-refactor-commit)
+	. Currently with the following dependencies:
+		- Spring Web
+		- Mustache
+		- Spring Data JPA
+		- H2 Database (Stretch: MySQL , PostgreSQL)
+		- Spring Boot DevTools
+	. Add a UI (JavaScript SPA or simple HTML)
+	. Support EDD in your UI with RabbitMQ and/or Websockets
+
+User stories for your TODO app:
+As a VISITOR, I should be able to login to see my TODO list
+As a USER, I should be able to add a Task
+As a USER, I should be able to see when a Task was added
+As a USER, I should be able to update or delete a Task
+As a USER, I should be able to mark a task as complete
+As a USER, I should be able to request all tasks, completed tasks or outstanding tasks to view.
+As a USER, I should be able to see when a task was marked as completed.
+As a USER, I should be able to provide more details (optional description) to my task(s).
+
+
+Stretch User stories:
+As a USER, I should be able to create and see many TODO lists
+As a USER, I should be able to name my TODO list so I can manage them more easily
+As a USER, I should be able to share my TODO list with another GUEST who can view only that list
+As a USER, I should be able to assign a TODO item to another USER, so they can complete the task
+As a USER, I should be able to see which USER completed a task so I can track status.
+
+
 This tutorial shows you how to build efficiently a sample blog application by combining the power of https://projects.spring.io/spring-boot/[Spring Boot] and https://kotlinlang.org/[Kotlin].
 
 If you are starting with Kotlin, you can learn the language by reading the https://kotlinlang.org/docs/reference/[reference documentation], following the online https://play.kotlinlang.org/[Kotlin Koans tutorial] or just using https://docs.spring.io/spring/docs/current/spring-framework-reference/[Spring Framework reference documentation] which now provides code samples in Kotlin.
