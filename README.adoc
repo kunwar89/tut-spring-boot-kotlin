@@ -20,22 +20,22 @@ High level objectives are:
 	. Support EDD in your UI with RabbitMQ and/or Websockets
 
 User stories for your TODO app:
-. As a VISITOR, I should be able to login to see my TODO list
-. As a USER, I should be able to add a Task
-. As a USER, I should be able to see when a Task was added
-. As a USER, I should be able to update or delete a Task
-. As a USER, I should be able to mark a task as complete
-. As a USER, I should be able to request all tasks, completed tasks or outstanding tasks to view.
-. As a USER, I should be able to see when a task was marked as completed.
-. As a USER, I should be able to provide more details (optional description) to my task(s).
+    . As a VISITOR, I should be able to login to see my TODO list
+    . As a USER, I should be able to add a Task
+    . As a USER, I should be able to see when a Task was added
+    . As a USER, I should be able to update or delete a Task
+    . As a USER, I should be able to mark a task as complete
+    . As a USER, I should be able to request all tasks, completed tasks or outstanding tasks to view.
+    . As a USER, I should be able to see when a task was marked as completed.
+    . As a USER, I should be able to provide more details (optional description) to my task(s).
 
 
 Stretch User stories:
-. As a USER, I should be able to create and see many TODO lists
-. As a USER, I should be able to name my TODO list so I can manage them more easily
-. As a USER, I should be able to share my TODO list with another GUEST who can view only that list
-. As a USER, I should be able to assign a TODO item to another USER, so they can complete the task
-. As a USER, I should be able to see which USER completed a task so I can track status.
+    . As a USER, I should be able to create and see many TODO lists
+    . As a USER, I should be able to name my TODO list so I can manage them more easily
+    . As a USER, I should be able to share my TODO list with another GUEST who can view only that list
+    . As a USER, I should be able to assign a TODO item to another USER, so they can complete the task
+    . As a USER, I should be able to see which USER completed a task so I can track status.
 
 
 This tutorial shows you how to build efficiently a sample blog application by combining the power of https://projects.spring.io/spring-boot/[Spring Boot] and https://kotlinlang.org/[Kotlin].
