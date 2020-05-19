@@ -11,7 +11,8 @@ import org.springframework.data.repository.findByIdOrNull
 class RepositoriesTests @Autowired constructor(
 		val entityManager: TestEntityManager,
 		val userRepository: UserRepository,
-		val articleRepository: ArticleRepository) {
+		val articleRepository: ArticleRepository,
+        val taskRepository: TaskRepository) {
 
 	@Test
 	fun `When findByIdOrNull then return Article`() {
@@ -35,17 +36,23 @@ class RepositoriesTests @Autowired constructor(
 
 	@Test
 	fun `When findByTaskIds then return Tasks`() {
-		val taskOne = Task("1","This is Task One", "Entered by User 1")
+		val taskOne = Task("1", "This is Task One", "Entered by User 1")
 		entityManager.persist(taskOne)
 		entityManager.flush()
 
-		val taskTwo = Task("2","This is Task Two", "Entered by User 2")
+		val taskTwo = Task("2", "This is Task Two", "Entered by User 2")
 		entityManager.persist(taskTwo)
 		entityManager.flush()
 
-		val tasks = taskRepository.findByExternalIds(listOf("1", "2"))
-		assertThat(tasks[0]).isEqualTo(taskOne)
-		assertThat(tasks[1]).isEqualTo(taskTwo)
+		val tasks = taskRepository.findByExternalIdIn(listOf("1", "2"))
 
+		for (task in tasks) {
+			if (task.externalId.equals('1')) {
+				assertThat(task).isEqualTo(taskOne)
+			} else if (task.externalId.equals('2')) {
+				assertThat(task).isEqualTo(taskTwo)
+			}
+		}
 	}
+
 }
