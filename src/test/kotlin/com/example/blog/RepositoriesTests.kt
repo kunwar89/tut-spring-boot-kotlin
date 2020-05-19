@@ -32,4 +32,20 @@ class RepositoriesTests @Autowired constructor(
 		val user = userRepository.findByLogin(juergen.login)
 		assertThat(user).isEqualTo(juergen)
 	}
+
+	@Test
+	fun `When findByTaskIds then return Tasks`() {
+		val taskOne = Task("1","This is Task One", "Entered by User 1")
+		entityManager.persist(taskOne)
+		entityManager.flush()
+
+		val taskTwo = Task("2","This is Task Two", "Entered by User 2")
+		entityManager.persist(taskTwo)
+		entityManager.flush()
+
+		val tasks = taskRepository.findByTaskIds(listOf("1", "2"))
+		assertThat(tasks[0]).isEqualTo(taskOne)
+		assertThat(tasks[1]).isEqualTo(taskTwo)
+
+	}
 }
