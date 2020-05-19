@@ -20,3 +20,10 @@ class User(
 		var lastname: String,
 		var description: String? = null,
 		@Id @GeneratedValue var id: Long? = null)
+
+@Entity
+class Task(
+		var externalId: String,
+		var description: String,
+		var user: String,
+		@Id @GeneratedValue var id: Long? = null)
