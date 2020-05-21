@@ -52,7 +52,5 @@ allOpen {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
-	exceptionFormat "full"
-	events "started", "skipped", "passed", "failed"
-	showStandardStreams true
+	testLogging.showStackTraces = true
 }
