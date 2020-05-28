@@ -35,7 +35,7 @@ class RepositoriesTests @Autowired constructor(
 	}
 
 	@Test
-	fun `When findByTaskIds then return Tasks`() {
+	fun `When findByExternalIdIn then return Tasks`() {
 		val taskOne = Task("1", "This is Task One", "Entered by User 1")
 		entityManager.persist(taskOne)
 		entityManager.flush()
